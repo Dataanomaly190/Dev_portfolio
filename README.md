@@ -36,7 +36,7 @@ Portfolio/
 │   └── resume.pdf      #if not, make one here with same name (resume.pdf)
 ├── src/
 │   ├── assets/
-│   │   ├── Certificates/          #Contains certification images and pdfs
+│   │   ├── Certificates/          #Contains certification images and pdfs (if not present make one, see more from project.js imports)
 │   │   └── [project images]
 │   ├── components/
 │   │   ├── Home/           # Navbar + Hero
