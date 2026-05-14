@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* ─── Keyframes ─────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 1;   }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 4px  rgba(34, 197, 94, 0.2); }
+  50%       { box-shadow: 0 0 20px 4px rgb(70, 143, 97);   }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ─── Global resets ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #000;
+  color: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ─── Utilities ──────────────────────────────────────── */
+.blink-glow {
+  animation: blink 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+/* ─── Hero name ──────────────────────────────────────── */
+.hero-name {
+  display: block;
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #67e8f9 30%,
+    #ffffff 50%,
+    #a5f3fc 70%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Pills ──────────────────────────────────────────── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #9ca3af;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, color 0.2s;
+}
+.pill:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  color: #e2e8f0;
+}
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #06b6d4;
+}
+.pill-green {
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+.pill-green:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+/* ─── CTA Buttons ────────────────────────────────────── */
+.cta-primary {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: #06b6d4;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.cta-primary:hover { background: #22d3ee; }
+
+.cta-ghost {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: transparent;
+  color: #f0f0f5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color 0.2s, color 0.2s;
+}
+.cta-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
