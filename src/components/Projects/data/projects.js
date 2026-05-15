@@ -11,7 +11,7 @@ import Weather_Image from "../../../assets/Weather_Image.png";
 import FileConvertor_Image from "../../../assets/FileConverter_Image.png";
 import ByteMorph_Image from "../../../assets/ByteMorph-Pro_Image.png";
 import Jerry_Agent_Image from "../../../assets/Jerry_Agent_Image.png";
-import FaceDetectionBasic_Image from "../../../assets/FaceDetection_Basic_Image.png";
+import FaceDetectionBasic_Image from "../../../assets/faceDetection_Basic_Image.png";
 import FaceRecognition_Image from "../../../assets/FaceRecognition.png";
 import AdultCensus_Image from "../../../assets/AdultCensus_Image.png";
 import BankData_Image from "../../../assets/BankData_Image.png";
