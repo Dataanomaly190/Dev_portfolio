@@ -534,9 +534,7 @@ function ProjectCard({ project, color }) {
                                 pointerEvents: hovered ? 'auto' : 'none',
                             }}>
                                 {project.isPortfolio ? (
-                                    <a href={project.links.live} target="_blank" rel="noopener noreferrer"
-                                        style={{ textDecoration: 'none' }}
-                                    >
+                                    <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
                                         <div style={{
                                             display: 'flex', alignItems: 'center', gap: '8px',
                                             fontFamily: "'JetBrains Mono', monospace",
@@ -556,7 +554,29 @@ function ProjectCard({ project, color }) {
                                             }} />
                                             Online
                                         </div>
-                                    </a>
+                                        <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+                                            style={{
+                                                display: 'flex', alignItems: 'center', gap: '7px',
+                                                fontFamily: "'JetBrains Mono', monospace",
+                                                fontSize: '0.74rem', color: '#f1f5f9',
+                                                textDecoration: 'none',
+                                                padding: '8px 18px', borderRadius: '8px',
+                                                border: `1px solid ${color}66`,
+                                                background: `${color}22`,
+                                                transition: 'background 0.2s, border-color 0.2s',
+                                            }}
+                                            onMouseEnter={e => {
+                                                e.currentTarget.style.background = `${color}44`;
+                                                e.currentTarget.style.borderColor = color;
+                                            }}
+                                            onMouseLeave={e => {
+                                                e.currentTarget.style.background = `${color}22`;
+                                                e.currentTarget.style.borderColor = `${color}66`;
+                                            }}
+                                        >
+                                            <FaGithub size={12} /> GitHub
+                                        </a>
+                                    </div>
                                 ) : project.links?.live ? (
                                     <div className='flex flex-row gap-2'>
                                         <a href={project.links.github} target="_blank" rel="noopener noreferrer"
